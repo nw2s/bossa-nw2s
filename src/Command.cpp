@@ -707,7 +707,7 @@ CommandMwb::invoke(char* argv[], int argc)
             char* input = readline("? ");
             if (!input)
                 return;
-            if (input == '\0' ||
+            if (*input == '\0' ||
                 !argUint32(input, &value))
             {
                 free(input);
@@ -810,7 +810,7 @@ CommandMww::invoke(char* argv[], int argc)
             char* input = readline("? ");
             if (!input)
                 return;
-            if (input == '\0' ||
+            if (*input == '\0' ||
                 !argUint32(input, &value))
             {
                 free(input);
