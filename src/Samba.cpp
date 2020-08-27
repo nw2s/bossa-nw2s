@@ -144,7 +144,7 @@ Samba::init()
 bool
 Samba::connect(SerialPort::Ptr port, int bps)
 {
-    _port = port;
+    _port = move(port);
 
     // Try to connect at a high speed if USB
     _isUsb = _port->isUsb();

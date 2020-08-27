@@ -21,6 +21,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+#include <unistd.h>
+
 
 #include "CmdOpts.h"
 #include "Samba.h"
@@ -306,7 +309,7 @@ main(int argc, char* argv[])
                 return 1;
             }
 				
-			usleep(100000);
+			sleep(1);
 			
 			port->close();			
         }
