@@ -37,7 +37,7 @@ ifeq ($(OS),MINGW32)
 EXE=.exe
 COMMON_SRCS+=WinSerialPort.cpp WinPortFactory.cpp
 COMMON_LDFLAGS=-Wl,--enable-auto-import -static -static-libstdc++ -static-libgcc
-COMMON_LIBS=-Wl,--as-needed -lsetupapi -ltermcap
+COMMON_LIBS=-Wl, -lsetupapi -ltermcap
 BOSSA_RC=BossaRes.rc
 WIXDIR="C:\Program Files (x86)\Windows Installer XML v3.5\bin"
 
@@ -65,7 +65,7 @@ endif
 #
 ifeq ($(OS),Linux)
 COMMON_SRCS+=PosixSerialPort.cpp LinuxPortFactory.cpp
-COMMON_LIBS=-Wl,--as-needed
+COMMON_LIBS=-Wl, 
 WX_LIBS+=-lX11
 
 MACHINE:=$(shell uname -m)
